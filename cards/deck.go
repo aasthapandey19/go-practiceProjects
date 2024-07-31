@@ -48,14 +48,15 @@ func (d deck) saveToFile(fileName string) error {
 
 // read deck from local
 
-func newDeckFromFile() deck {
-	byteSlice, err := os.ReadFile("myDeckOfCards")
+func newDeckFromFile(filename string) deck {
+	byteSlice, err := os.ReadFile(filename)
 	if err != nil {
 		fmt.Println("Error: ", err)
 		os.Exit(1)
 	}
 	newDeckString := string(byteSlice)
 	separatedString := strings.Split(newDeckString, ",")
+	fmt.Println("This ------------", deck(separatedString))
 	return deck(separatedString)
 }
 
