@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"strings"
 )
@@ -34,13 +35,18 @@ func deal(d deck, handSize int) (deck, deck) {
 	return d[:handSize], d[handSize:]
 }
 
+// convert deck to string
 func (d deck) toString() string {
 	return strings.Join(d, "\n")
 }
 
+//save a file to local
+
 func (d deck) saveToFile(fileName string) error {
 	return os.WriteFile(fileName, []byte(d.toString()), 0666)
 }
+
+// read deck from local
 
 func newDeckFromFile() deck {
 	byteSlice, err := os.ReadFile("myDeckOfCards")
@@ -51,4 +57,13 @@ func newDeckFromFile() deck {
 	newDeckString := string(byteSlice)
 	separatedString := strings.Split(newDeckString, ",")
 	return deck(separatedString)
+}
+
+//shuffle cards
+
+func (d deck) shuffle() {
+	for index := range d {
+		newIndex := rand.Intn(len(d) - 1)
+		d[index], d[newIndex] = d[newIndex], d[index]
+	}
 }
