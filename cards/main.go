@@ -3,7 +3,9 @@ package main
 //import "fmt"
 
 func main() {
-	cards := newDeck()
-	cards.saveToFile("myDeckOfCards")
+	//cards := newDeck()
+	//cards.saveToFile("myDeckOfCards")
 	//fmt.Println(cards.toString())
+	cards := newDeckFromFile()
+	cards.print()
 }
