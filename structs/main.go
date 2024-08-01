@@ -13,4 +13,6 @@ func main() {
 	checo := person{firstName: "Sergio", lastName: "Perez"}
 	fmt.Println(alex)
 	fmt.Println(checo.lastName)
+	var max person
+	fmt.Println(max)
 }
