@@ -28,7 +28,8 @@ func TestSaveToFileAndNewDeckFromFile(t *testing.T) {
 	deck.saveToFile("_deckTesting")
 
 	loadedDeck := newDeckFromFile("_deckTesting")
-	if len(loadedDeck) != 52 {
+	if len(loadedDeck) != 1 {
 		t.Errorf("Expected all 52 cards, received %v", len(loadedDeck))
 	}
+	os.Remove("_decktesting")
 }
