@@ -11,4 +11,12 @@ func main() {
 	}
 	fmt.Println(colors["red"])
 	delete(colors, "blue")
+	printMap(colors)
+}
+
+func printMap(c map[string]string) {
+
+	for color, team := range c {
+		fmt.Printf(color, team)
+	}
 }
