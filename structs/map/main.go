@@ -10,4 +10,5 @@ func main() {
 		"blue": "redbull",
 	}
 	fmt.Println(colors["red"])
+	delete(colors, "blue")
 }
