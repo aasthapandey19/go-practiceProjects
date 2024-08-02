@@ -6,8 +6,9 @@ func main() {
 	fmt.Println("Map implmntation")
 
 	colors := map[string]string{
-		"red":  "ferrari",
-		"blue": "redbull",
+		"red":   "ferrari",
+		"blue":  "redbull",
+		"green": "alpine",
 	}
 	fmt.Println(colors["red"])
 	delete(colors, "blue")
@@ -17,6 +18,6 @@ func main() {
 func printMap(c map[string]string) {
 
 	for color, team := range c {
-		fmt.Printf(color, team)
+		fmt.Println(color, " is the color of team ", team)
 	}
 }
