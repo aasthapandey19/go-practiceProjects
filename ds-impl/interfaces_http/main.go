@@ -21,6 +21,7 @@ func main() {
 
 func (logWriter) Write(bs []byte) (int, error) {
 	fmt.Println(string(bs))
+	fmt.Println("The no of bytes", len(bs))
 	return len(bs), nil
 
 }
