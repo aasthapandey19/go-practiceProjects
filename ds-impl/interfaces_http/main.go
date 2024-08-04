@@ -12,5 +12,9 @@ func main() {
 		fmt.Println("Error is :", err)
 		os.Exit(1)
 	}
-	fmt.Println(resp)
+	bs := make([]byte, 40000)
+	resp.Body.Read(bs)
+	s := string(bs)
+	os.Remove("responseBody")
+	os.WriteFile("responseBody", []byte(s), 0666)
 }
