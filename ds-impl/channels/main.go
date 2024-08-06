@@ -14,7 +14,7 @@ func main() {
 		"http://instagram.com",
 	}
 	for _, link := range links {
-		check(link)
+		go check(link)
 	}
 }
 
